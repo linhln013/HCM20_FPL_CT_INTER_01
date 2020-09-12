@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="#" th:action="@{/student}" th:object="${students}" method="post" >
+		<label>Id</label><br/> 
+		<input type="text" th:field="*{id}" ${status}/><br/>
+		<label>Name</label><br/>
+		<input type="text" th:field="*{name}"/><br/>
+		<label>Birthday</label><br/>
+		<input type="text" th:field="*{birthday}"/><br/>
+		<label>Gender</label><br/>
+		<input type="radio" th:field="*{gender}" value="1"/><label>Nam</label>
+		<input type="radio" th:field="*{gender}" value="0"/><label>Nữ</label><br/>
+		<label>Phone</label><br/>
+		<input type="text" th:field="*{phone}"/><br/>
+		<label>Email</label><br/>
+		<input type="text" th:field="*{email}"/><br/>
+		<label>Major</label><br/>
+		<input type="text" th:field="*{major}"/><br/>
+		<label>Address</label><br/>
+		<input type="text" th:field="*{address}"/><br/>
+		<br/>
+		<button type="submit" name="add">Add</button>
+		<button type="submit" name="update">Update</button>
+
+	</form>
+</body>
+</html>

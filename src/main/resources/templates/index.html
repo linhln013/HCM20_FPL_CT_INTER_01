@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Student!!!</h2>
+	<form th:action="@{/excute}" method="get">
+		<button name="add">Add</button>
+		<br/><br/>
+		<button name="search">Search</button>
+		<input type="text" name="tk"/><br/>
+	</form>
+	<br/>
+	<br/>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Major</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>              
+            <tr th:each="r : ${getStudent}">
+            	<td th:text="${r.id}"></td>
+                <td th:text="${r.name}"></td>
+                <td th:text="${r.birthday}"></td>
+                <td th:if="${r.gender}== true">Nam</td>
+				<td th:if="${r.gender}== false">Nu</td>
+                <td th:text="${r.phone}"></td>
+                <td th:text="${r.email}"></td>
+                <td th:text="${r.major}"></td>
+                <td th:text="${r.address}"></td>
+				<td >
+				<a th:href="@{'/student_edit' + ${r.id}}">Edit</a>
+				<a th:href="@{'/student_delete' + ${r.id}}">Delete</a>
+				</td>
+				
+            </tr>
+        </table>
+</body>
+</html>
